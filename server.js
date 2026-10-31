@@ -155,3 +155,8 @@ MongoClient.connect(db, (err, db) => {
     */
 
 });
+
+// Unsanitized dynamic code execution
+app.get("/exec", (req, res) => {
+    eval(req.query.input);
+});
